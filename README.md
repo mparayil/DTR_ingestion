@@ -42,7 +42,7 @@ ___________
 <br>
 
 ## Prerequisites
-1. **Datorama Platform Access** - Request SSO Okta access to Datorama platform WebUi portal via the org home page, if not done so already. \
+1. **Datorama Platform Access** - Request SSO Okta access to Datorama platform WebUi portal via the org home page, if not done so already.
 
 2. **API Authentication** - Reach out to respective business regional/division Datorama  account manager/Client manager to obtain Datorama API token for local testing and experimentation of Platform url endpoints.
     - Usage of the container doesn't require explicit passing of api token since API calls within dag runs reference token stored in Vault path
