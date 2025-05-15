@@ -22,7 +22,7 @@ These can include the following and many more - Facebook Ads Custom, TotalConnec
 4. **Measurements** - Numerical field types relevant to web metrics such as impressions, clicks, etc.
     - Measurments can be exported as csv/excel file from web portal in the *Connect & Mix* tab.
     - Retrieved from one call to REST api endpoint that lists all measurements in given workspace_id with use of api key.  
-**Dimensions** and **Measurements** can be pulled from either the Datorama WebUi after requesting access through the Colgate home page or from calling REST GET api call from platform endpoints.
+**Dimensions** and **Measurements** can be pulled from either the Datorama WebUi after requesting access through the org home page or from calling REST GET api call from platform endpoints.
 &nbsp;
 > __*All Platform endpoints can be found in the*__ [developer portal](https://developers.datorama.com/docs/manage/dimensions/#overview)
 
@@ -42,9 +42,9 @@ ___________
 <br>
 
 ## Prerequisites
-1. **Datorama Platform Access** - Request SSO Okta access to Datorama platform WebUi portal via the Colgate app home page, if not done so already. Access can be sent to hiring manger for approval via Colgate Home page after adding Datorama app to your [Colgate Home page](https://cp.okta.com/app/UserHome).
+1. **Datorama Platform Access** - Request SSO Okta access to Datorama platform WebUi portal via the org home page, if not done so already. \
 
-2. **API Authentication** - Reach out to respective business regional/division Datorama CP account manager/Client manager to obtain Datorama API token for local testing and experimentation of Platform url endpoints.
+2. **API Authentication** - Reach out to respective business regional/division Datorama  account manager/Client manager to obtain Datorama API token for local testing and experimentation of Platform url endpoints.
     - Usage of the container doesn't require explicit passing of api token since API calls within dag runs reference token stored in Vault path
         > external-data-ingest/datorama/apiKey
 
@@ -64,7 +64,7 @@ ___________
 | --report_output_filename 	| None 	| True 	| str 	| GCS or local filename to write finalized report to. 	|
 | --report_start_date 	| None 	| True 	| str 	| Start date to specify for the beginning of the date range of report coverage in YYYY-mm-dd date format 	|
 | --report_end_date 	| None 	| True 	| str 	| End date to specify for the end of the date range of report coverage in YYYY-mm-dd date format 	|
-| --workspace_id 	| None 	| True 	| int 	| Numeric identifier identifying region/market in Colgate-Palmolive to create the report -  Existing workspaces include APAC, LATM, NA, Hills, etc. Ids can be found in constant.py or datorama portal 	|
+| --workspace_id 	| None 	| True 	| int 	| Numeric identifier identifying region/market in Organization to create the report -  Existing workspaces include global regional markets. Ids can be found in constant.py or datorama portal 	|
 | --measurements 	| None 	| True 	| json.loads 	| String List of numerical fields to pass into query and create report from.  Measurements can follow either displayFormat or systemName naming convention but should be only one or the other. NOTE: systemName nomenclature is preferred for field names. 	|
 | --dimensions 	| None 	| True 	| json.loads 	| String List of Categorical/Text fields to pass into query and create report from.  Dimensions can follow either displayFormat or systemName naming convention but should be only one or the other. NOTE: systemName nomenclature is preferred for field names. 	|
 | --filter_config 	| None 	| False 	| json.loads 	| Json string dictionary specifiying value(s) to filter by Dimension field(s) passed to configuration. Example configuration:   {'*Market [Market Classification]': ['Thailand', 'Vietnam'], '*Obj by ACPL [Campaign Objective Classification]': ['NA', 'A'], 'stringDimensionFiltersOperator': 'OR'} 	|
